@@ -10,6 +10,8 @@ Welcome to yangyuxuan_blog's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   scjl.rst
+
 
 
 Indices and tables
