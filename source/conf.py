@@ -12,8 +12,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+import os
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -48,7 +48,8 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
-    
+    'chinese_search',
+
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -116,23 +117,27 @@ htmlhelp_basename = 'yangyuxuan_blogdoc'
 
 # -- Options for LaTeX output ------------------------------------------------
 
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #
-    # 'papersize': 'letterpaper',
+# 注：在生成html的时候这句话要注释
+# latex_engine = 'xelatex'
 
-    # The font size ('10pt', '11pt' or '12pt').
-    #
-    # 'pointsize': '10pt',
+latex_elements={# The paper size ('letterpaper' or 'a4paper').
+'papersize':'a4paper',# The font size ('10pt', '11pt' or '12pt').
+'pointsize':'12pt','classoptions':',oneside','babel':'',#必须
+'inputenc':'',#必须
+'utf8extra':'',#必须
+# Additional stuff for the LaTeX preamble.
+'preamble': r"""
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setCJKmainfont{WenQuanYi Micro Hei}
+\setCJKmonofont[Scale=0.9]{WenQuanYi Micro Hei Mono}
+\setCJKfamilyfont{song}{WenQuanYi Micro Hei}
+\setCJKfamilyfont{sf}{WenQuanYi Micro Hei}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+"""}
 
-    # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
-
-    # Latex figure (float) alignment
-    #
-    # 'figure_align': 'htbp',
-}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
@@ -163,6 +168,20 @@ texinfo_documents = [
      author, 'yangyuxuan_blog', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
+if not on_rtd:  # only import and set the theme if we're building docs locally
+    import sphinx_rtd_theme
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# otherwise, readthedocs.org uses their theme by default, so no need to specify it
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+_exts = "../exts"
+sys.path.append(os.path.abspath(_exts))
 
 
 # -- Options for Epub output -------------------------------------------------
