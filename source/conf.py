@@ -122,7 +122,7 @@ htmlhelp_basename = 'yangyuxuan_blogdoc'
 # -- Options for LaTeX output ------------------------------------------------
 
 # 注：在生成html的时候这句话要注释
-#latex_engine = 'xelatex'
+latex_engine = 'xelatex'
 
 latex_elements={# The paper size ('letterpaper' or 'a4paper').
 'papersize':'a4paper',# The font size ('10pt', '11pt' or '12pt').
@@ -157,7 +157,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'yangyuxuan_blog', 'yangyuxuan_blog Documentation',
+    (master_doc, 'yangyuxuan_blog', u'yangyuxuan_blog Documentation',
      [author], 1)
 ]
 
@@ -168,8 +168,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'yangyuxuan_blog', 'yangyuxuan_blog Documentation',
-     author, 'yangyuxuan_blog', 'One line description of project.',
+    (master_doc, 'yangyuxuan_blog', u'yangyuxuan_blog Documentation',
+     author, u'yangyuxuan_blog', 'One line description of project.',
      'Miscellaneous'),
 ]
 
