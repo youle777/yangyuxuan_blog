@@ -19,9 +19,9 @@ import sys
 
 # -- Project information -----------------------------------------------------
 
-project = 'yangyuxuan_blog'
-copyright = '2018, yangyuxuan'
-author = 'yangyuxuan'
+project = u'yangyuxuan_blog'
+copyright = u'2018, yangyuxuan'
+author = u'yangyuxuan'
 
 # The short X.Y version
 version = ''
@@ -154,7 +154,7 @@ latex_elements={# The paper size ('letterpaper' or 'a4paper').
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'yangyuxuan_blog.tex', u'yangyuxuan\\_blog Documentation',
-     'yangyuxuan', 'manual'),
+     u'yangyuxuan', u'manual'),
 ]
 
 
@@ -179,16 +179,7 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
-if not on_rtd:  # only import and set the theme if we're building docs locally
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-# otherwise, readthedocs.org uses their theme by default, so no need to specify it
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 _exts = "../exts"
 sys.path.append(os.path.abspath(_exts))
