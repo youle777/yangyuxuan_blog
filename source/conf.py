@@ -175,7 +175,7 @@ texinfo_documents = [
 
 
 
-_exts = "../exts"
+_exts = "/Users/nan2le/code/yangyuxuan_blog/exts"
 sys.path.append(os.path.abspath(_exts))
 
 
