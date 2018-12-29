@@ -29,6 +29,7 @@ version = ''
 release = '1.0'
 
 
+
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -85,11 +86,12 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
 
 import sphinx_rtd_theme
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -121,7 +123,7 @@ htmlhelp_basename = 'yangyuxuan_blogdoc'
 # -- Options for LaTeX output ------------------------------------------------
 
 # 注：在生成html的时候这句话要注释
-# latex_engine = 'xelatex'
+#latex_engine = 'xelatex'
 
 latex_elements={# The paper size ('letterpaper' or 'a4paper').
 'papersize':'a4paper',# The font size ('10pt', '11pt' or '12pt').
@@ -129,17 +131,22 @@ latex_elements={# The paper size ('letterpaper' or 'a4paper').
 'inputenc':'',#必须
 'utf8extra':'',#必须
 # Additional stuff for the LaTeX preamble.
-'preamble': r"""
-\usepackage{xeCJK}
-\usepackage{indentfirst}
-\setlength{\parindent}{2em}
-\setCJKmainfont{WenQuanYi Micro Hei}
-\setCJKmonofont[Scale=0.9]{WenQuanYi Micro Hei Mono}
-\setCJKfamilyfont{song}{WenQuanYi Micro Hei}
-\setCJKfamilyfont{sf}{WenQuanYi Micro Hei}
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt
-"""}
+'preamble': r'''
+\hypersetup{unicode=true}
+\usepackage{CJKutf8}
+\DeclareUnicodeCharacter{00A0}{\\nobreakspace}
+\DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}
+\DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}
+\DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}
+\DeclareUnicodeCharacter{2713}{x}
+\DeclareUnicodeCharacter{27FA}{\ensuremath{\Longleftrightarrow}}
+\DeclareUnicodeCharacter{221A}{\ensuremath{\sqrt{}}}
+\DeclareUnicodeCharacter{221B}{\ensuremath{\sqrt[3]{}}}
+\DeclareUnicodeCharacter{2295}{\ensuremath{\oplus}}
+\DeclareUnicodeCharacter{2297}{\ensuremath{\otimes}}
+\\begin{CJK}{UTF8}{gbsn}
+\AtEndDocument{\end{CJK}}
+''',}
 
 
 # Grouping the document tree into LaTeX files. List of tuples
