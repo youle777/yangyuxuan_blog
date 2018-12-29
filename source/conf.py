@@ -87,6 +87,9 @@ pygments_style = None
 #
 html_theme = 'alabaster'
 
+import sphinx_rtd_theme
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -143,7 +146,7 @@ latex_elements={# The paper size ('letterpaper' or 'a4paper').
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'yangyuxuan_blog.tex', 'yangyuxuan\\_blog Documentation',
+    (master_doc, 'yangyuxuan_blog.tex', u'yangyuxuan\\_blog Documentation',
      'yangyuxuan', 'manual'),
 ]
 
